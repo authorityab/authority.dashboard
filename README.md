@@ -1,6 +1,7 @@
 # Authority Dashboard
 * Vi kommer bygga en dashboard baserad på .NET Core - https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.300
 * Material design - https://material.io/
+* Material design react https://material-ui.com/
 * Config filer i yaml - http://yaml.org/ 
 * Man ska kunna bygga moduler och componenter
 
