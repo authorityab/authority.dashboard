@@ -8,6 +8,7 @@
 * Öl status
 * Deploy statistik
 * Kaffe status
+* Now playing sonos status
 
 # CI Tools
 * Travis CI? - https://travis-ci.org/
@@ -19,5 +20,5 @@
 * Amazon dash button - https://github.com/Nekmo/amazon-dash
 * Google home mini - https://dialogflow.com/
 * Amazon Dot - https://developer.amazon.com/alexa/console/ask
-* Leap motion - https://www.leapmotion.com/
+* Leap motion
 * Fjärrkontroll
