@@ -11,8 +11,7 @@
 
 # CI Tools
 * Travis CI?
-* Jen kins?
-*
+* Jenkins?
 
 # Hårdvara
 * Knappen
