@@ -19,5 +19,5 @@
 * Amazon dash button - https://github.com/Nekmo/amazon-dash
 * Google home mini - https://dialogflow.com/
 * Amazon Dot - https://developer.amazon.com/alexa/console/ask
-* Leap motion
+* Leap motion - https://www.leapmotion.com/
 * Fjärrkontroll
