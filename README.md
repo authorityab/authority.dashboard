@@ -1,15 +1,24 @@
-# authority.dashboard
-* Vi kommer bygga ett dashboard baserat på .NET Core
+# Authority Dashboard
+* Vi kommer bygga en dashboard baserad på .NET Core
+* Material design
+* Config filer i yaml
+* Man ska kunna bygga moduler och componenter
 
+# Idéer för moduler
+* Öl status
+* Deploy statistik
+* Kaffe status
 
+# CI Tools
+* Travis CI?
+* Jen kins?
+*
 
-
-
-
-
-
-# TODO 
-## Hello world
-* Simpelt ramverk som tillhandahåller ett REST API
-* Visa upp en grid med tiles 
-* En modul som kan skicka en sträng till API
+# Hårdvara
+* Knappen
+* Raspberry pi
+* Amazon dash button
+* Google home mini
+* Amazon Dot
+* Leap motion
+* Fjärrkontroll
