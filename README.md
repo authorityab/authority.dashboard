@@ -1,7 +1,7 @@
 # Authority Dashboard
-* Vi kommer bygga en dashboard baserad på .NET Core
-* Material design
-* Config filer i yaml
+* Vi kommer bygga en dashboard baserad på .NET Core - https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.300
+* Material design - https://material.io/
+* Config filer i yaml - http://yaml.org/ 
 * Man ska kunna bygga moduler och componenter
 
 # Idéer för moduler
@@ -10,14 +10,14 @@
 * Kaffe status
 
 # CI Tools
-* Travis CI?
+* Travis CI? - https://travis-ci.org/
 * Jenkins?
 
 # Hårdvara
 * Knappen
-* Raspberry pi
-* Amazon dash button
-* Google home mini
-* Amazon Dot
+* Raspberry Pi
+* Amazon dash button - https://github.com/Nekmo/amazon-dash
+* Google home mini - https://dialogflow.com/
+* Amazon Dot - https://developer.amazon.com/alexa/console/ask
 * Leap motion
 * Fjärrkontroll
