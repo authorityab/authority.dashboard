@@ -1,0 +1,24 @@
+﻿body {
+}
+
+
+#wrapper {
+    text-align: center;
+
+}
+
+
+.module {
+    width: 200px;
+    height: 200px;
+    border: 1px solid #e3e3e3;
+    float: left;
+    margin-right: 50px;
+    background-color: whitesmoke;
+}
+
+.module h4 {
+}
+
+.module p {
+}
