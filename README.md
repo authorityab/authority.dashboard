@@ -1,3 +1,7 @@
+# Hello World
+* Start dashboard .NET Core app: localhost:5000
+* Start node.js module: node index.js -> localhost:3000
+
 # Authority Dashboard
 * We will build a dashboard based on .NET Core - https://www.microsoft.com/net/download/linux-package-manager/debian9/sdk-2.1.300
 * Material design - https://material.io/
@@ -25,3 +29,4 @@
 * Remote control
 
 # Mobile app
+
