@@ -31,12 +31,14 @@ var app = new Vue({
     initModules: function(modules) {
       let timers = [];
       for (let i = 0; i < modules.length; i++) {
-        var module = modules[i];
-        timers.push(
-          setInterval(() => {
-            this.handleModuleRequest(module, i);
-          }, module.reloadInterval * 1000)
-        );
+        if (modules[i].type === 'fetch') {
+          var module = modules[i];
+          timers.push(
+            setInterval(() => {
+              this.handleModuleRequest(module, i);
+            }, module.reloadInterval * 1000)
+          );
+        }
       }
     },
     handleModuleRequest: function(module, index) {
