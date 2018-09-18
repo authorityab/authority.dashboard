@@ -5,7 +5,7 @@ namespace Authority.Dashboard.Models
     {
         public int Id { get; set; }
 
-        public int ReloadInterval { get; set; }
+        public string Value { get; set; }
 
     }
 }

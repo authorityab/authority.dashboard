@@ -21,7 +21,7 @@ namespace Authority.Dashboard.Controllers
 
         // GET api/module
         [HttpGet]
-        public ActionResult<IEnumerable<Module>> Get()
+        public ActionResult<Modules> Get()
         {
             var modules = moduleService.GetModules();
             return modules;
@@ -38,7 +38,7 @@ namespace Authority.Dashboard.Controllers
         [HttpPost]
         public async Task Post([FromBody] string value)
         {
-            var module = JsonConvert.DeserializeObject<Module>(value);
+            var module = JsonConvert.DeserializeObject<ModuleDto>(value);
             HttpClient client = new HttpClient();
 
             HttpResponseMessage response = await client.PostAsJsonAsync(

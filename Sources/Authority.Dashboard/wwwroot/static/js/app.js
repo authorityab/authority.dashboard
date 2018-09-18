@@ -10,10 +10,15 @@ function getModules() {
         type: 'GET',
         url: '/api/module',
         success: function (data) {
-             $.each(data, function (key, item) {
-                 modules.push(item);
-                  $('<div class="module" data-module-id="' + item.id + '"><h4>' + item.id + '</h4><p></p></div>').appendTo($('#modules'));
-             });
+             //$.each(data.pushModules, function (key, item) {
+             //    modules.push(item);
+             //     $('<div class="module" data-module-id="' + item.id + '"><h4>' + item.id + '</h4><p></p></div>').appendTo($('#modules'));
+             //});
+
+            $.each(data.fetchModules, function (key, item) {
+                modules.push(item);
+                $('<div class="module" data-module-id="' + item.id + '"><h4>' + item.id + '</h4><p></p></div>').appendTo($('#modules'));
+            });
 
              initModules(modules);
         }

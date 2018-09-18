@@ -1,6 +1,14 @@
-﻿- id: 2
-  url: http://127.0.0.1:3000/getData
-  method: GET
-  reloadInterval: 5
- 
-  
+﻿fetchModules:
+  - id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114104
+    url: http://127.0.0.1:3000/getData
+    method: GET
+    reloadInterval: 5
+
+  - id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114999
+    url: http://127.0.0.1:3000/getData
+    method: GET
+    reloadInterval: 8
+
+
+pushModules:
+  - id: 4A17AD48-0FD3-4F01-A063-D7ECCA8C91A7
