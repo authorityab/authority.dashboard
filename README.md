@@ -12,7 +12,7 @@
 ```
 * Specify unique id
 * Specify url to api method
-* Specify refresh time
+* Specify reload time (sec)
 * Specify HTTP Method
 * Reboot Dashboard
 
