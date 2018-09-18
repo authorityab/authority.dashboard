@@ -3,6 +3,13 @@
 * Create a folder for your module
 * The module needs to be hosted separatly and have a api method that returns a string value
 * Add a new entry in modules.yml
+
+```javascript
+- id: 2
+  url: http://127.0.0.1:3000/getData
+  method: GET
+  reloadInterval: 5
+```
 * Specify unique id
 * Specify url to api method
 * Specify refresh time
