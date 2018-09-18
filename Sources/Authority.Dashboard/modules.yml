@@ -2,4 +2,8 @@
   url: http://127.0.0.1:3000/getData
   method: GET
   reloadInterval: 5
-  
+  color: "#FFDAB9"
+  height: 200
+  width: 400
+  title: Hello word!
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."

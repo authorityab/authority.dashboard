@@ -12,7 +12,7 @@ function getModules() {
         success: function (data) {
              $.each(data, function (key, item) {
                  modules.push(item);
-                  $('<div class="module" data-module-id="' + item.id + '"><h4>' + item.id + '</h4><p></p></div>').appendTo($('#modules'));
+               $('<div class="module" style="background-color:' + item.color + ';height:' + item.height + 'px;width:' + item.width + 'px;" data-module-id="' + item.id + '"><h4>' + item.title + '</h4><p>' + item.description + '</p><div></div></div>').appendTo($('#modules'));
              });
 
              initModules(modules);
@@ -37,7 +37,7 @@ function handleModuleRequest(module) {
         url: module.url,
         success: function (data) {
             var item = $('#modules .module[data-module-id="' + module.id + '"]');
-            item.find('p').html(data);
+            item.find('div').html(data);
         }
     });
 }
