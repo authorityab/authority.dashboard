@@ -4,12 +4,12 @@
   method: GET
   reloadInterval: 5
   title: Hello word!
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
   order: 3
   style:
-    color: "#FFDAB9"
-    height: 200
-    width: 400
+    backgroundColor: #FFDAB9
+    height: 200px
+    width: 400px
 
 - id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114999
   type: fetch
@@ -17,12 +17,12 @@
   method: GET
   reloadInterval: 8
   title: Hello word!
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
   order: 5
   style:
-    color: "#FFDAB9"
-    height: 200
-    width: 400
+    backgroundColor: #FFDAB9
+    height: 200px
+    width: 400px
 
 - id: 4A17AD48-0FD3-4F01-A063-D7ECCA8C91A7
   type: push
