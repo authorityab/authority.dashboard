@@ -7,7 +7,7 @@
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
   order: 3
   style:
-    backgroundColor: #FFDAB9
+    backgroundColor: "#FFDAB9"
     height: 200px
     width: 400px
 
@@ -20,7 +20,7 @@
   description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
   order: 5
   style:
-    backgroundColor: #FFDAB9
+    backgroundColor: "#FFDAB9"
     height: 200px
     width: 400px
 
