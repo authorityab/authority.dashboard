@@ -4,18 +4,22 @@ $(document).ready(function() {
 });
 
 function getModules() {
-    var modules = [];
+  var modules = [];
+  console.log(modules);
     
     $.ajax({
         type: 'GET',
         url: '/api/module',
-        success: function (data) {
+      success: function (data) {
+        data.sort(function (a, b) {
+          return a.order - b.order;
+        });
              $.each(data, function (key, item) {
                  modules.push(item);
                $('<div class="module" style="background-color:' + item.color + ';height:' + item.height + 'px;width:' + item.width + 'px;" data-module-id="' + item.id + '"><h4>' + item.title + '</h4><p>' + item.description + '</p><div></div></div>').appendTo($('#modules'));
              });
 
-             initModules(modules);
+            initModules(modules);
         }
     });
 };

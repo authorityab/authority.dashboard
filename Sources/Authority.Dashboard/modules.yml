@@ -7,3 +7,4 @@
   width: 400
   title: Hello word!
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
+  order: 3
