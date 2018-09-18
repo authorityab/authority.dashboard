@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>DASHBOARD</title>
@@ -7,21 +8,25 @@
     <link rel="stylesheet" href="/static/css/app.css" type="text/css" />
 
 </head>
-    <body>
 
-        <div id="wrapper">
-            <div id="modules">
-                <div class="module" data-module-id="1">
-                    <h4>1</h4>
-                    <p>POC</p>
-                </div>
+<body>
+    <div id="wrapper">
+        <div id="modules">
+            <div class="module" data-module-id="1">
+                <h4>1</h4>
+                <p>POC</p>
             </div>
         </div>
+    </div>
 
+    <div id="app">
+        <div v-for="module in modules">
+            <module v-bind:module="module"></module>
+        </div>
+    </div>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin="anonymous"></script>
-        <script src="/static/js/app.js"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/static/js/vue.js"></script>
+</body>
+
 </html>
