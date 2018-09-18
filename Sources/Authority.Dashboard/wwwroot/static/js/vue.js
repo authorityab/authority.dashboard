@@ -29,17 +29,18 @@ var app = new Vue({
   },
   methods: {
     initModules: function(modules) {
-      let timers = [];
-      for (let i = 0; i < modules.length; i++) {
-        if (modules[i].type === 'fetch') {
-          var module = modules[i];
-          timers.push(
-            setInterval(() => {
-              this.handleModuleRequest(module, i);
-            }, module.reloadInterval * 1000)
-          );
-        }
-      }
+        let timers = [];
+
+        modules.forEach((module, i) => {
+            if (module.type === 'fetch') {
+              timers.push(
+                setInterval(() => {
+                  this.handleModuleRequest(module, i);
+
+                }, module.reloadInterval * 1000)
+              );
+            }
+        });
     },
     handleModuleRequest: function(module, index) {
       fetch(module.url)
@@ -47,7 +48,7 @@ var app = new Vue({
           return response.json();
         })
         .then(data => {
-          this.modules[0].value = data;
+          this.modules[index].value = data;
         });
     }
   }
