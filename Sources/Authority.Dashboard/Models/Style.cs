@@ -2,7 +2,7 @@
 {
     public class Style
     {
-        public string Color { get; set; }
+        public string BackgroundColor { get; set; }
 
         public string Height { get; set; }
 
