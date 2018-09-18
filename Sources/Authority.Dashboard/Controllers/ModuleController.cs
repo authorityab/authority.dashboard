@@ -38,7 +38,7 @@ namespace Authority.Dashboard.Controllers
         [HttpPost]
         public async Task Post([FromBody] string value)
         {
-            var module = JsonConvert.DeserializeObject<ModuleDto>(value);
+            var module = JsonConvert.DeserializeObject<Modules>(value);
             HttpClient client = new HttpClient();
 
             HttpResponseMessage response = await client.PostAsJsonAsync(
