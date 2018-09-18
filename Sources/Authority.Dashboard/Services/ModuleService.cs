@@ -14,6 +14,7 @@ namespace Authority.Dashboard.Services
 
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(new CamelCaseNamingConvention())
+                .WithTagMapping()
                 .Build();
 
             var modules = deserializer.Deserialize<List<Module>>(conf);
