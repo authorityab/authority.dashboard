@@ -1,7 +1,7 @@
 Vue.component('module', {
   props: ['module'],
   template: `
-    <div class="module" v-bind:data-module-id="module.id">
+    <div class="module" v-bind:data-module-id="module.id" v-bind:style="module.style">
       <h4>{{ module.id }}</h4>
       <p>{{ module.value }}</p>
     </div>
@@ -23,7 +23,10 @@ var app = new Vue({
         data.forEach(item => {
           item.value = '';
         });
-        vm.modules = data;
+        vm.modules = data.sort((a, b) => {
+          return a.order - b.order;
+        });
+        console.log(vm.modules);
         this.initModules(vm.modules);
       });
   },
