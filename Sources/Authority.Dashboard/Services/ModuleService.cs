@@ -6,6 +6,8 @@ using YamlDotNet.Serialization.NamingConventions;
 
 namespace Authority.Dashboard.Services
 {
+    using System;
+
     public class ModuleService : IModuleService
     {
         public Modules GetModules()
@@ -16,9 +18,17 @@ namespace Authority.Dashboard.Services
                 .WithNamingConvention(new CamelCaseNamingConvention())
                 .Build();
 
-            var modules = deserializer.Deserialize<Modules>(conf);
+            try
+            {
+                var modules = deserializer.Deserialize<Modules>(conf);
+                return modules;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
 
-            return modules;
 
         }
     }
