@@ -8,16 +8,15 @@ namespace Authority.Dashboard.Services
 {
     public class ModuleService : IModuleService
     {
-        public List<Module> GetModules()
+        public Modules GetModules()
         {
             var conf = System.IO.File.OpenText("modules.yml");
 
             var deserializer = new DeserializerBuilder()
                 .WithNamingConvention(new CamelCaseNamingConvention())
-                .WithTagMapping()
                 .Build();
 
-            var modules = deserializer.Deserialize<List<Module>>(conf);
+            var modules = deserializer.Deserialize<Modules>(conf);
 
             return modules;
 

@@ -5,6 +5,6 @@ namespace Authority.Dashboard.Contracts
 {
     public interface IModuleService
     {
-        List<Module> GetModules();
+        Modules GetModules();
     }
 }
