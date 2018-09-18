@@ -10,7 +10,7 @@ namespace Authority.Dashboard.Services
 
     public class ModuleService : IModuleService
     {
-        public Modules GetModules()
+        public List<Module> GetModules()
         {
             var conf = System.IO.File.OpenText("modules.yml");
 
@@ -20,7 +20,7 @@ namespace Authority.Dashboard.Services
 
             try
             {
-                var modules = deserializer.Deserialize<Modules>(conf);
+                var modules = deserializer.Deserialize<List<Module>>(conf);
                 return modules;
             }
             catch (Exception e)

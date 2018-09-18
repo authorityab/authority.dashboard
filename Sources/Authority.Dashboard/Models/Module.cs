@@ -1,9 +1,11 @@
 ﻿using System;
 namespace Authority.Dashboard.Models
 {
-    public class FetchModule
+    public class Module
     {
         public Guid Id { get; set; }
+
+        public string Type { get; set; }
 
         public string Url { get; set; }
 

@@ -18,4 +18,8 @@
     <PackageReference Include="YamlDotNet.NetCore" Version="1.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Models\PushModule.cs" />
+    <Compile Remove="Models\Modules.cs" />
+  </ItemGroup>
 </Project>
