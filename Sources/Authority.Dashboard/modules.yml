@@ -1,25 +1,28 @@
-﻿fetchModules:
-  - id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114104
-    url: http://127.0.0.1:3000/getData
-    method: GET
-    reloadInterval: 5
+﻿- id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114104
+  type: fetch
+  url: http://127.0.0.1:3000/getData
+  method: GET
+  reloadInterval: 5
+  title: Hello word!
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
+  order: 3
+  style:
     color: "#FFDAB9"
     height: 200
     width: 400
-    title: Hello word!
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
-    order: 3
 
-  - id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114999
-    url: http://127.0.0.1:3000/getData
-    method: GET
-    reloadInterval: 8
+- id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114999
+  type: fetch
+  url: http://127.0.0.1:3000/getData
+  method: GET
+  reloadInterval: 8
+  title: Hello word!
+  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
+  order: 5
+  style:
     color: "#FFDAB9"
     height: 200
     width: 400
-    title: Hello word!
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus."
-    order: 5
 
-pushModules:
-  - id: 4A17AD48-0FD3-4F01-A063-D7ECCA8C91A7
+- id: 4A17AD48-0FD3-4F01-A063-D7ECCA8C91A7
+  type: push
