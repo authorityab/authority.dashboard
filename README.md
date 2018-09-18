@@ -1,5 +1,5 @@
 # Create Module
-* Create a folder for the specific language
+* Create a folder for the specific language "/Modules/Node/hello_world/index.js"
 * Create a folder for your module
 * The module needs to be hosted separatly and have a api method that returns a string value
 * Add a new entry in modules.yml
