@@ -20,14 +20,11 @@ var app = new Vue({
         return response.json();
       })
       .then(data => {
-        data.fetchModules.forEach(item => {
+        data.forEach(item => {
           item.value = '';
         });
-        data.pushModules.forEach(item => {
-          item.value = '';
-        });
-        vm.modules = data.fetchModules.concat(data.pushModules);
-        this.initModules(data.fetchModules);
+        vm.modules = data;
+        this.initModules(vm.modules);
       });
   },
   methods: {
