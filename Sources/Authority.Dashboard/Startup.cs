@@ -28,6 +28,8 @@ namespace Authority.Dashboard
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddTransient<IDashboardService, DashboardService>();
             services.AddTransient<IModuleService, ModuleService>();
         }
 
