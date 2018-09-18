@@ -9,6 +9,8 @@
     <Folder Include="Models\" />
     <Folder Include="wwwroot\static\" />
     <Folder Include="wwwroot\static\css\" />
+    <Folder Include="Services\" />
+    <Folder Include="Contracts\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,13 +1,6 @@
 ﻿
-
-
 $(document).ready(function() {
-
-
     var modules = getModules();
-
-   
-
 });
 
 function getModules() {
@@ -15,7 +8,7 @@ function getModules() {
     
     $.ajax({
         type: 'GET',
-        url: '/api/modules',
+        url: '/api/module',
         success: function (data) {
              $.each(data, function (key, item) {
                  modules.push(item);
