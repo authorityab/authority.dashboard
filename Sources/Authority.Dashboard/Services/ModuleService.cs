@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Authority.Dashboard.Contracts;
 using Authority.Dashboard.Models;
 using YamlDotNet.Serialization;
@@ -9,10 +8,6 @@ namespace Authority.Dashboard.Services
 {
     public class ModuleService : IModuleService
     {
-        public ModuleService()
-        {
-        }
-
         public List<Module> GetModules()
         {
             var conf = System.IO.File.OpenText("modules.yml");
