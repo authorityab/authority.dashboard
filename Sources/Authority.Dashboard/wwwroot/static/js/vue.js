@@ -1,7 +1,7 @@
 Vue.component('module', {
   props: ['module'],
   template: `
-    <div class="module" v-bind:data-module-id="module.id">
+    <div class="module" v-bind:data-module-id="module.id" style="background-color:' + item.color + ';height:' + item.height + 'px;width:' + item.width + 'px;">
       <h4>{{ module.id }}</h4>
       <p>{{ module.value }}</p>
     </div>
@@ -20,11 +20,14 @@ var app = new Vue({
         return response.json();
       })
       .then(data => {
-        data.forEach(item => {
+        data.fetchModules.forEach(item => {
           item.value = '';
         });
-        vm.modules = data;
-        this.initModules(vm.modules);
+        data.pushModules.forEach(item => {
+          item.value = '';
+        });
+        vm.modules = data.fetchModules.concat(data.pushModules);
+        this.initModules(data.fetchModules);
       });
   },
   methods: {
