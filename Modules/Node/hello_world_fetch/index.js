@@ -26,7 +26,8 @@ app.use(function (req, res, next) {
 });
 
 app.get("/getData", (req, res, next) => {
-  var data = ["Fred","Dimman","Vasse","Zunken","Cissi","Oscar"];
+  var data = ["[FETCH] Fred","[FETCH] Dimman","[FETCH] Vasse","[FETCH] Zunken","[FETCH] Cissi","[FETCH] Oscar", "[FETCH] Felicia"];
+
   var random = Math.floor(Math.random() * data.length);
 
  res.json(data[random]);

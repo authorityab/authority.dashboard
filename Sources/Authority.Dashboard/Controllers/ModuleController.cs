@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Authority.Dashboard.Contracts;
+using Authority.Dashboard.Hubs;
 using Authority.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Newtonsoft.Json;
 
 namespace Authority.Dashboard.Controllers
@@ -13,10 +16,12 @@ namespace Authority.Dashboard.Controllers
     public class ModuleController : ControllerBase
     {
         private readonly IModuleService moduleService;
+        private readonly IHubContext<ModuleHub> moduleHub;
 
-        public ModuleController(IModuleService moduleService) 
+        public ModuleController(IModuleService moduleService, IHubContext<ModuleHub> moduleHub) 
         {
             this.moduleService = moduleService;
+            this.moduleHub = moduleHub;
         }
 
         // GET api/module
@@ -36,21 +41,17 @@ namespace Authority.Dashboard.Controllers
 
         // POST api/module
         [HttpPost]
-        public async Task Post([FromBody] string value)
+        public ActionResult<string> Post([FromBody] string value)
         {
-            var module = JsonConvert.DeserializeObject<List<Module>>(value);
-            HttpClient client = new HttpClient();
+            return "value";
 
-            HttpResponseMessage response = await client.PostAsJsonAsync(
-                "api/update", module);
-
-            response.EnsureSuccessStatusCode();
         }
 
-        // PUT api/module/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // PUT api/module/4A17AD48-0FD3-4F01-A063-D7ECCA8C91A7
+        [HttpPut("{id:Guid}")]
+        public async Task Put(Guid id, [FromBody] ModuleDto module)
         {
+            await moduleHub.Clients.All.SendAsync("Update", module.Id, module.Value);
         }
 
         // DELETE api/module/5

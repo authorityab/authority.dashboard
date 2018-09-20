@@ -10,15 +10,18 @@
     <Folder Include="wwwroot\static\css\" />
     <Folder Include="Services\" />
     <Folder Include="Contracts\" />
+    <Folder Include="Hubs\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="YamlDotNet.NetCore" Version="1.0.0" />
+    <PackageReference Include="Microsoft.AspNet.SignalR" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Models\PushModule.cs" />
     <Compile Remove="Models\Modules.cs" />
+    <Compile Remove="Hubs\Hub.cs" />
   </ItemGroup>
 </Project>

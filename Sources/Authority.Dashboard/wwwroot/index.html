@@ -6,7 +6,6 @@
     <title>DASHBOARD</title>
 
     <link rel="stylesheet" href="/static/css/app.css" type="text/css" />
-
 </head>
 
 <body>
@@ -18,13 +17,12 @@
             </div>
         </div>
     </div>
-
     <div id="app">
         <div v-for="module in modules">
             <module v-bind:module="module"></module>
         </div>
     </div>
-
+    <script src="/static/node_modules/@aspnet/signalr/dist/browser/signalr.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="/static/js/vue.js"></script>
 </body>
