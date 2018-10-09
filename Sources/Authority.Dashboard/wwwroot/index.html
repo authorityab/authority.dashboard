@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>DASHBOARD</title>
 
-    <link rel="stylesheet" href="/static/css/app.css" type="text/css" />
+    <link rel="stylesheet" href="/static/css/main.css" type="text/css" />
 </head>
 
 <body>
@@ -17,8 +17,11 @@
             </div>
         </div>
     </div>
+    <div class="">
+
+    </div>
     <div id="app">
-        <div v-for="module in modules">
+        <div class="c-grid" v-for="module in modules">
             <module v-bind:module="module"></module>
         </div>
     </div>

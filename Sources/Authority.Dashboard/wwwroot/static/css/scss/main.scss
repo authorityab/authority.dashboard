@@ -1,0 +1,28 @@
+body {
+  background: #292929;
+}
+
+#wrapper {
+  text-align: center;
+}
+
+.c-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  &__item {
+    padding: 1rem;
+    min-height: 20rem;
+    background: #3e3e3e;
+    color: #b3d3e6;
+  }
+}
+
+.module {
+}
+
+.module h4 {
+}
+
+.module p {
+}

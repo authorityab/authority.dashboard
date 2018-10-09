@@ -1,7 +1,7 @@
 Vue.component('module', {
   props: ['module'],
   template: `
-    <div class="module" v-bind:data-module-id="module.id" v-bind:style="module.style">
+    <div class="c-grid__item module" v-bind:data-module-id="module.id" v-bind:style="module.style">
       <h4>{{ module.type }}</h4>
       <h4>{{ module.id }}</h4>
       <p>{{ module.value }}</p>
