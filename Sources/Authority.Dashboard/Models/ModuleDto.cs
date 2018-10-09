@@ -9,4 +9,3 @@ namespace Authority.Dashboard.Models
 
     }
 }
-

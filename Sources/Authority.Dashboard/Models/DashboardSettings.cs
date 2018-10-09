@@ -1,5 +1,4 @@
-﻿using System;
-namespace Authority.Dashboard.Models
+﻿namespace Authority.Dashboard.Models
 {
     public class DashboardSettings
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using Authority.Dashboard.Models;
+﻿using Authority.Dashboard.Models;
 
 namespace Authority.Dashboard.Contracts
 {

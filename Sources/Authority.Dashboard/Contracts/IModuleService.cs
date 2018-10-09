@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using Authority.Dashboard.Models;
+﻿using Authority.Dashboard.Models;
+using System.Collections.Generic;
 
 namespace Authority.Dashboard.Contracts
 {

@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Authority.Dashboard.Contracts;
+﻿using Authority.Dashboard.Contracts;
 using Authority.Dashboard.Hubs;
 using Authority.Dashboard.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
-using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Authority.Dashboard.Controllers
 {
