@@ -1,5 +1,4 @@
-﻿using System;
-using Authority.Dashboard.Contracts;
+﻿using Authority.Dashboard.Contracts;
 using Authority.Dashboard.Models;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;

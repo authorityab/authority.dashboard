@@ -22,4 +22,3 @@ namespace Authority.Dashboard.Models
         public Style Style { get; set; }
     }
 }
-

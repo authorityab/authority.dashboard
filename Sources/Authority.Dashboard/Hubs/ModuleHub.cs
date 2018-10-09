@@ -1,7 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using Authority.Dashboard.Contracts;
+﻿using Authority.Dashboard.Contracts;
 using Microsoft.AspNetCore.SignalR;
+using System;
+using System.Threading.Tasks;
 
 namespace Authority.Dashboard.Hubs
 {
