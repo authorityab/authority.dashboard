@@ -133,11 +133,12 @@ var app = new Vue({
       console.log('down');
     },
     left: function() {
-       this.modules.reverse();
+       this.modules.push(this.modules.shift());
       console.log('left');
     },
 
      right: function() {
+        this.modules.unshift(this.modules.pop());
       console.log('right');
     },
     inputLock: function() {
