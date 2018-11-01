@@ -1,16 +1,30 @@
-
-
 Vue.component('module', {
   props: ['module'],
   template: `
-    <div class="module" v-bind:data-module-id="module.id" v-bind:style="module.style">
-      <h4>{{ module.type }}</h4>
+    <div class="c-grid__item module" v-bind:data-module-id="module.id" v-bind:style="module.style">
+      <h4>{{ module.source }}</h4>
       <h4>{{ module.id }}</h4>
       <p>{{ module.value }}</p>
       <img :src="module.value"></img>
     </div>
   `
+<<<<<<< HEAD
+  });
+  
+=======
 });
+
+//Vue.component('moduleImg', {
+//  props: ['module'],
+//  template: `
+//    <div class="c-grid__item module" v-bind:data-module-id="module.id" v-bind:style="module.style">
+//      <h4>{{ module.source }}</h4>
+//      <h4>{{ module.id }}</h4>
+//      <img src="{{ module.value }}"></img>
+//    </div>
+//  `
+//});
+>>>>>>> 79bed61d4b4b35638e8bbc484c2317c889da7ee2
 
 
 var app = new Vue({
@@ -86,6 +100,9 @@ var app = new Vue({
       });
     },
 
+<<<<<<< HEAD
+
+
 
 
 
@@ -101,6 +118,15 @@ var app = new Vue({
           if (gesture.type === 'swipe') {
                 self.calculateSwipe(gesture);
           }
+=======
+    setupLeap: function() {
+      var controller = new Leap.Controller({ enableGestures: true });
+
+      controller.on('gesture', function(gesture) {
+        if (gesture.type === 'swipe') {
+          calculateSwipe(gesture);
+        }
+>>>>>>> 79bed61d4b4b35638e8bbc484c2317c889da7ee2
       });
 
       controller.on('deviceFrame', function(frame) {});
@@ -109,6 +135,8 @@ var app = new Vue({
     },
 
     calculateSwipe: function(gesture) {
+<<<<<<< HEAD
+
         if (this.inputLocked) {
             return;
         }
@@ -122,18 +150,30 @@ var app = new Vue({
         }
 
         this.inputLock();
+=======
+      if (gesture.state !== 'stop' || buildInProgress) return;
 
+      var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+      if (isHorizontal) {
+        gesture.direction[0] > 0 ? right() : left();
+      } else {
+        gesture.direction[1] > 0 ? up() : down();
+      }
+
+      inputLock();
+>>>>>>> 79bed61d4b4b35638e8bbc484c2317c889da7ee2
     },
 
     // Inverted swipe direction
     up: function() {
       console.log('up');
+<<<<<<< HEAD
      },
     down: function() {
       console.log('down');
     },
     left: function() {
-       this.modules.reverse();
+        this.modules.reverse();
       console.log('left');
     },
 
@@ -148,5 +188,12 @@ var app = new Vue({
       }, self.inputLockTime);
     }
 
+=======
+    },
+
+    down: function() {
+      console.log('down');
+    }
+>>>>>>> 79bed61d4b4b35638e8bbc484c2317c889da7ee2
   }
 });

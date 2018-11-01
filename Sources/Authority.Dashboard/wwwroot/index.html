@@ -21,8 +21,10 @@
 
     </div>
     <div id="app">
-        <div class="c-grid" v-for="module in modules">
-            <module v-bind:module="module"></module>
+        <div class="c-grid">
+            <div class="c-grid__item" v-for="module in modules">
+                <module v-bind:module="module"></module>
+            </div>
         </div>
     </div>
     <script src="/static/node_modules/@aspnet/signalr/dist/browser/signalr.js"></script>
