@@ -103,12 +103,6 @@ var app = new Vue({
       });
 
       controller.on('deviceFrame', function(frame) {
-     //   var numFingers = frame.fingers.filter(function(finger, index, fingers) {return finger.extended}).length;
-     //   if (numFingers === fingersToDeploy && !buildInProgress) {
-     //     buildInProgress = true;
-     //     button();
-     //     buildLock();
-     //   }
       });
 
       controller.connect();
@@ -128,29 +122,17 @@ var app = new Vue({
         inputLock();
     },
 
-// Inverted swipe direction
- up: function() {
-//  postParams.path = apiBase + '/down';
-//  post(postParams);
-  console.log('up');
-},
+    // Inverted swipe direction
+     up: function() {
+      console.log('up');
+    },
 
- down: function() {
-  //postParams.path = apiBase + '/up';
-  //post(postParams);
-  console.log('down');
-},
+     down: function() {
+      console.log('down');
+    },
 
 
 
-// post(data) {
-//  var req = http.request(data, function(res) {
-//      res.on('data', function (chunk) { });
-//  });
-//
-//  req.write('');
-//  req.end();
-//}
 
 
   }
