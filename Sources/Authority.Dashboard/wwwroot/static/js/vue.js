@@ -2,12 +2,24 @@ Vue.component('module', {
   props: ['module'],
   template: `
     <div class="c-grid__item module" v-bind:data-module-id="module.id" v-bind:style="module.style">
-      <h4>{{ module.type }}</h4>
+      <h4>{{ module.source }}</h4>
       <h4>{{ module.id }}</h4>
       <p>{{ module.value }}</p>
+      <img :src="module.value"></img>
     </div>
   `
-});
+  });
+
+//Vue.component('moduleImg', {
+//  props: ['module'],
+//  template: `
+//    <div class="c-grid__item module" v-bind:data-module-id="module.id" v-bind:style="module.style">
+//      <h4>{{ module.source }}</h4>
+//      <h4>{{ module.id }}</h4>
+//      <img src="{{ module.value }}"></img>
+//    </div>
+//  `
+//});
 
 var app = new Vue({
   el: '#app',
@@ -29,7 +41,6 @@ var app = new Vue({
     if (!hubConnection.started) {
         hubConnection.start().catch(err => console.error(err.toString()));
     }   
-
   },
   created: function() {
     let vm = this;
@@ -47,13 +58,15 @@ var app = new Vue({
         console.log(vm.modules);
         this.initModules(vm.modules);
       });
+
+    this.setupLeap();
   },
   methods: {
     initModules: function(modules) {
         let timers = [];
 
         modules.forEach((module, i) => {
-            if (module.type === 'fetch') {
+            if (module.source === 'fetch') {
               timers.push(
                 setInterval(() => {
                   this.handleModuleRequest(module, i);
@@ -78,6 +91,67 @@ var app = new Vue({
                 module.value = value;
             }
         })
-    }
+    },
+
+   setupLeap: function() {
+      var controller = new Leap.Controller({ enableGestures: true });
+
+      controller.on("gesture", function(gesture) {
+          if (gesture.type === 'swipe') {
+                calculateSwipe(gesture);
+          }
+      });
+
+      controller.on('deviceFrame', function(frame) {
+     //   var numFingers = frame.fingers.filter(function(finger, index, fingers) {return finger.extended}).length;
+     //   if (numFingers === fingersToDeploy && !buildInProgress) {
+     //     buildInProgress = true;
+     //     button();
+     //     buildLock();
+     //   }
+      });
+
+      controller.connect();
+    },
+
+    calculateSwipe: function(gesture) {
+      if (gesture.state !== 'stop' || buildInProgress)
+        return;
+
+        var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+        if(isHorizontal) {
+            (gesture.direction[0] > 0) ? right() : left();
+        } else {
+            (gesture.direction[1] > 0) ? up() : down();
+        }
+
+        inputLock();
+    },
+
+// Inverted swipe direction
+ up: function() {
+//  postParams.path = apiBase + '/down';
+//  post(postParams);
+  console.log('up');
+},
+
+ down: function() {
+  //postParams.path = apiBase + '/up';
+  //post(postParams);
+  console.log('down');
+},
+
+
+
+// post(data) {
+//  var req = http.request(data, function(res) {
+//      res.on('data', function (chunk) { });
+//  });
+//
+//  req.write('');
+//  req.end();
+//}
+
+
   }
 });

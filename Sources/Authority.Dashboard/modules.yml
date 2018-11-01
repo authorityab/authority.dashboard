@@ -1,28 +1,36 @@
-﻿#- id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114104
-#  type: fetch
-#  url: http://127.0.0.1:3000/getData
-#  method: GET
-#  reloadInterval: 5
-#  title: Hello word!
-#  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
-#  order: 3
-#  style:
-#    backgroundColor: "#FFDAB9"
-#    height: 200px
-#    width: 400px
-#
-#- id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114999
-#  type: fetch
-#  url: http://127.0.0.1:3000/getData
-#  method: GET
-#  reloadInterval: 8
-#  title: Hello word!
-#  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
-#  order: 5
-#  style:
-#    backgroundColor: "#FFDAB9"
-#    height: 200px
-#    width: 400px
+﻿- id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114104
+  source: fetch
+  type: txt
+  url: http://127.0.0.1:3000/getData
+  method: GET
+  reloadInterval: 5
+  title: Hello word!
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
+  order: 3
+  style:
+    backgroundColor: "#FFDAB9"
+    height: 200px
+    width: 400px
+
+- id: 2E5FC6AF-5CFD-4A04-A7CA-945BA2114999
+  source: fetch
+  type: txt
+  url: http://127.0.0.1:3000/getData
+  method: GET
+  reloadInterval: 8
+  title: Hello word!
+  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac nulla tellus.
+  order: 5
+  style:
+    backgroundColor: "#FFDAB9"
+    height: 200px
+    width: 400px
 
 - id: 4A17AD48-0FD3-4F01-A063-D7ECCA8C91A7
-  type: push
+  source: push
+  type: txt
+  
+- id: c7041543-7497-47d4-a1af-3894568ea23a
+  source: push
+  type: img
+  

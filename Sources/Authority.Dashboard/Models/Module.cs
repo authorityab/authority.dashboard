@@ -5,7 +5,10 @@ namespace Authority.Dashboard.Models
     {
         public Guid Id { get; set; }
 
+        public string Source { get; set; }
+
         public string Type { get; set; }
+
 
         public string Url { get; set; }
 
