@@ -33,4 +33,12 @@
 - id: c7041543-7497-47d4-a1af-3894568ea23a
   source: push
   type: img
+
+  id: aec2d003-e756-47d6-bf09-904e39e4a66b
+  source: push
+  type: weather
+  style:
+    backgroundColor: "#FFFFFF"
+    height: 200px
+    width: 400px
   
