@@ -8,7 +8,7 @@ Vue.component('module', {
       <img :src="module.value"></img>
     </div>
   `
-  });
+});
 
 //Vue.component('moduleImg', {
 //  props: ['module'],
@@ -21,26 +21,27 @@ Vue.component('module', {
 //  `
 //});
 
+
 var app = new Vue({
   el: '#app',
   data: {
     modules: []
   },
-  beforeMount: function () {
-    const apiBase = "https://localhost:5000";
+  beforeMount: function() {
+    const apiBase = 'https://localhost:5000';
 
     const hubConnection = new signalR.HubConnectionBuilder()
-        .withUrl("/hubs/module")
-        .configureLogging(signalR.LogLevel.Information)
-        .build();
+      .withUrl('/hubs/module')
+      .configureLogging(signalR.LogLevel.Information)
+      .build();
 
-    hubConnection.on("Update", (moduleId, value) => {
+    hubConnection.on('Update', (moduleId, value) => {
       this.updateModule(moduleId, value);
     });
 
     if (!hubConnection.started) {
-        hubConnection.start().catch(err => console.error(err.toString()));
-    }   
+      hubConnection.start().catch(err => console.error(err.toString()));
+    }
   },
   created: function() {
     let vm = this;
@@ -63,18 +64,17 @@ var app = new Vue({
   },
   methods: {
     initModules: function(modules) {
-        let timers = [];
+      let timers = [];
 
-        modules.forEach((module, i) => {
-            if (module.source === 'fetch') {
-              timers.push(
-                setInterval(() => {
-                  this.handleModuleRequest(module, i);
-
-                }, module.reloadInterval * 1000)
-              );
-            }
-        });
+      modules.forEach((module, i) => {
+        if (module.source === 'fetch') {
+          timers.push(
+            setInterval(() => {
+              this.handleModuleRequest(module, i);
+            }, module.reloadInterval * 1000)
+          );
+        }
+      });
     },
     handleModuleRequest: function(module, index) {
       fetch(module.url)
@@ -86,54 +86,47 @@ var app = new Vue({
         });
     },
     updateModule: function(moduleId, value) {
-        this.modules.find(function(module) {
-            if (module.id === moduleId) {
-                module.value = value;
-            }
-        })
+      this.modules.find(function(module) {
+        if (module.id === moduleId) {
+          module.value = value;
+        }
+      });
     },
 
-   setupLeap: function() {
+    setupLeap: function() {
       var controller = new Leap.Controller({ enableGestures: true });
 
-      controller.on("gesture", function(gesture) {
-          if (gesture.type === 'swipe') {
-                calculateSwipe(gesture);
-          }
+      controller.on('gesture', function(gesture) {
+        if (gesture.type === 'swipe') {
+          calculateSwipe(gesture);
+        }
       });
 
-      controller.on('deviceFrame', function(frame) {
-      });
+      controller.on('deviceFrame', function(frame) {});
 
       controller.connect();
     },
 
     calculateSwipe: function(gesture) {
-      if (gesture.state !== 'stop' || buildInProgress)
-        return;
+      if (gesture.state !== 'stop' || buildInProgress) return;
 
-        var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
-        if(isHorizontal) {
-            (gesture.direction[0] > 0) ? right() : left();
-        } else {
-            (gesture.direction[1] > 0) ? up() : down();
-        }
+      var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+      if (isHorizontal) {
+        gesture.direction[0] > 0 ? right() : left();
+      } else {
+        gesture.direction[1] > 0 ? up() : down();
+      }
 
-        inputLock();
+      inputLock();
     },
 
     // Inverted swipe direction
-     up: function() {
+    up: function() {
       console.log('up');
     },
 
-     down: function() {
+    down: function() {
       console.log('down');
-    },
-
-
-
-
-
+    }
   }
 });
