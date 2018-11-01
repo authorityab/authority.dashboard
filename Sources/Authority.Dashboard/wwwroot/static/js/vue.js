@@ -9,22 +9,14 @@ Vue.component('module', {
     </div>
   `
   });
-
-//Vue.component('moduleImg', {
-//  props: ['module'],
-//  template: `
-//    <div class="c-grid__item module" v-bind:data-module-id="module.id" v-bind:style="module.style">
-//      <h4>{{ module.source }}</h4>
-//      <h4>{{ module.id }}</h4>
-//      <img src="{{ module.value }}"></img>
-//    </div>
-//  `
-//});
+  
 
 var app = new Vue({
   el: '#app',
   data: {
-    modules: []
+    modules: [],
+    inputLocked: false,
+    inputLockTime: 500
   },
   beforeMount: function () {
     const apiBase = "https://localhost:5000";
@@ -93,12 +85,22 @@ var app = new Vue({
         })
     },
 
-   setupLeap: function() {
+
+
+
+
+
+
+
+   //LEAP MOTION
+
+    setupLeap: function() {
+      var self = this;
       var controller = new Leap.Controller({ enableGestures: true });
 
       controller.on("gesture", function(gesture) {
           if (gesture.type === 'swipe') {
-                calculateSwipe(gesture);
+                self.calculateSwipe(gesture);
           }
       });
 
@@ -109,31 +111,44 @@ var app = new Vue({
     },
 
     calculateSwipe: function(gesture) {
-      if (gesture.state !== 'stop' || buildInProgress)
-        return;
 
-        var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
-        if(isHorizontal) {
-            (gesture.direction[0] > 0) ? right() : left();
-        } else {
-            (gesture.direction[1] > 0) ? up() : down();
+        if (this.inputLocked) {
+            return;
         }
 
-        inputLock();
+        var self = this;
+        var isHorizontal = Math.abs(gesture.direction[0]) > Math.abs(gesture.direction[1]);
+        if(isHorizontal) {
+            (gesture.direction[0] > 0) ? self.right() : self.left();
+        } else {
+            (gesture.direction[1] > 0) ? self.up() : self.down();
+        }
+
+        this.inputLock();
     },
 
     // Inverted swipe direction
      up: function() {
       console.log('up');
-    },
-
-     down: function() {
+     },
+    down: function() {
       console.log('down');
     },
+    left: function() {
+        this.modules.reverse();
+      console.log('left');
+    },
 
-
-
-
+     right: function() {
+      console.log('right');
+    },
+    inputLock: function() {
+      var self = this;
+      this.inputLocked = true;
+      setTimeout(function() {
+        self.inputLocked = false;
+      }, self.inputLockTime);
+    }
 
   }
 });

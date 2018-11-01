@@ -12,6 +12,7 @@
     <Folder Include="Contracts\" />
     <Folder Include="Hubs\" />
     <Folder Include="wwwroot\static\js\vendor\" />
+    <Folder Include="wwwroot\static\js\components\" />
   </ItemGroup>
 
   <ItemGroup>
