@@ -21,7 +21,5 @@
         public Images images { get; set; }
         public string title { get; set; }
         public double _score { get; set; }
-        //public Analytics analytics { get; set; }
-        //public User user { get; set; }
     }
 }

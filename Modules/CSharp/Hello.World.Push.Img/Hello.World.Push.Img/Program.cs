@@ -1,20 +1,18 @@
 ﻿namespace Hello.World.Push.Img
 {
+    using Hello.World.Push.Img.Dashboard;
     using Hello.World.Push.Img.Giphy;
     using System;
-    using System.Net.Http;
     using System.Threading;
-    using System.Threading.Tasks;
-    using Hello.World.Push.Img.Dashboard;
 
     class Program
     {
         static void Main(string[] args)
         {
+            var dashboardApi = new DashboardApi("c7041543-7497-47d4-a1af-3894568ea23a");
             while (true)
             {
                 string randomImageUrl = GetRandomImage();
-                var dashboardApi = new DashboardApi("c7041543-7497-47d4-a1af-3894568ea23a");
                 dashboardApi.Put(randomImageUrl);
                 Thread.Sleep(5000);
             }
@@ -36,9 +34,9 @@
 
         private static string GetRandomQuery()
         {
-            var data = new[] {"Fred", "Dimman", "Vasse", "Zunken", "Cissi", "Oscar", "Felicia"};
+            var data = new[] { "Fred", "Dimman", "Vasse", "Zunken", "Cissi", "Oscar", "Felicia" };
             var random = new Random();
-            var next = random.Next(0, data.Length-1);
+            var next = random.Next(0, data.Length);
             return data[next];
         }
     }

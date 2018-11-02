@@ -1,8 +1,8 @@
 ﻿namespace Hello.World.Push.Img.Giphy
 {
-    using System;
     using Hello.World.Push.Img.Giphy.Models;
     using Newtonsoft.Json;
+    using System;
     using System.Linq;
     using System.Net.Http;
     using System.Threading.Tasks;
@@ -21,7 +21,6 @@
 
         public async Task<string> GetRandomImageAsync(string query)
         {
-            
             var queryString = HttpUtility.ParseQueryString($"q={query}&api_key={_apiKey}");
             var uri = "search?" + queryString;
 
@@ -38,10 +37,10 @@
                     return null;
                 }
                 var random = new Random();
-                var index = count == 1 ? 0 : random.Next(0, count-1);
-
+                
+                var index = count == 1 ? 0 : random.Next(0, count);
                 Data item = giphyResponse.Data.ElementAt(index);
-                return item.images.original.url;
+                return item.images?.original?.url;
             }
 
             return null;
